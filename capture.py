@@ -1,10 +1,8 @@
-# -*- coding: utf-8 -*-
+#coding -*- coding: utf-8 -*-
 from picamera import PiCamera
-import time
-import datetime
-capture_interval = 1
-picamera = PiCamera()
-picamera.resolution = (1280 ,720)
-while True:
-    sleep(capture_interval)
-    picamera.capture(datetime.now().strftime("%Y-%m-%d-%H:%M:%S")
+
+camera = PiCamera()
+time.sleep(2)
+
+camera.capture("/home/pi/Pictures/img.jpg")
+print("Done.")

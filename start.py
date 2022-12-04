@@ -1,17 +1,22 @@
 # -*- coding: utf-8 -*-
 import time
-try :
-    from universal_cap import universalCap
-except:
-    print("_____ERROR WHILE IMPORTING universalCap_____")
-
-try :
-    from cls_cap import clsCapture
-except:
-    print ("_____ERROR WHILE IMPORTING clsCapture_____")
-    pass
-
-
+while True:
+    try :
+        from universal_cap import universalCap
+    except:
+        print("_____ERROR WHILE IMPORTING universalCap_____")
+    try :
+        from cls_cap import clsCapture
+    except:
+        print ("_____ERROR WHILE IMPORTING clsCapture_____")
+        pass
 
 
-universalCap(3264,1836,0) #try capture at secondary device 
+    try: 
+        universalCap(1920,1080,0) #try capture at secondary device 
+    except:
+        raise Exception ("_____universal camera error_____")
+
+    try:
+        clsCapture(1920,1080)
+    except: raise Exception ("_____cls camera error_____")

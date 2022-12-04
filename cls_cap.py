@@ -3,10 +3,16 @@ from picamera import PiCamera #this module works just at unix systems, and is ne
 import datetime
 import os
 
-def clsCapture(resolution_x=1920, resolution_y=1080,inside_folder = str(os.getcwd())+"\images_cls"):
+def clsCapture(resolution_x=1280, resolution_y=720,inside_folder = str(os.getcwd())+"\images_cls"):
     current_time = datetime.datetime.now()
     file_name = "%s-%s-%s-%s-%s-%s.png"%(current_time.day, current_time.month, current_time.year, current_time.hour, current_time.minute, current_time.second)
     full_file_path = os.path.join(inside_folder, file_name)
+    try:
+        if not os.path.exists("\image_cls"):
+            os.makedirs("\images_cls")
+    except:
+        raise Exception ("_____ERROR WHILE CREATING FOLDER FOR CLS_____")
+
     try:
         camera = PiCamera()
         camera.resolution = (resolution_x, resolution_y)

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import cv2, datetime, os
 
-def universalCap(width = 2660 ,heigth = 1920, device = 0, inside_folder = str(os.getcwd()) + "\images", fps = 1):
+def universalCap(width = 1280 ,heigth = 720, device = 0, inside_folder = str(os.getcwd()) + "\images", fps = 30):
     current_time = datetime.datetime.now()
 
     try:
@@ -22,13 +22,13 @@ def universalCap(width = 2660 ,heigth = 1920, device = 0, inside_folder = str(os
     ret,frame = camera.read()
     
     if (ret==False):
-        raise Exception ("_____ERROR WHILE READING CAMERA DATA_____")
+        raise Exception ("_____ERROR WHILE READING CAMERA DATA(check properties)_____")
     
     try:
         if not os.path.exists("\images"):
             os.makedirs("\images")
     except:
-        raise Exception ("_____ERROR WHILE CREATING FOLDER_____")
+        raise Exception ("_____ERROR WHILE CREATING FOLDER FOR UNIVERSAL_____")
 
     try:
 

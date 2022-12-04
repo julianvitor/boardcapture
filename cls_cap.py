@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from picamera import PiCamera
 import datetime
-import cv2
+import time
 
-def cls_capture(resolution_x, resolution_y, interval):
+def cls_capture(resolution_x=1280, resolution_y=720, interval=60):
 
     try:
         camera = PiCamera()
@@ -16,7 +16,3 @@ def cls_capture(resolution_x, resolution_y, interval):
         f = open("log.txt", "a")
         f.write("cls_camera_error")        
         print("_____CLS CAMERA ERROR_____")
-
-def usb_capture():
-    cam_port = 0
-

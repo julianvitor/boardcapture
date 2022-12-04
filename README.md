@@ -1,5 +1,5 @@
 # boardcapture
-
+#### simplify taking pictures on devices using CSI or USB ports
  - testing with **raspberry pi 4**
  - testing with **surface go 2018**
  - surface supported resolution for rear camera: **3264x1836** 16:9
@@ -13,4 +13,4 @@
  - wireless LAN password: **12345678**
  
  #flow
-![diagram](https://github.com/julianvitor/boardcapture/blob/main/fluxograma_geral.jpg)
+![diagram](https://github.com/julianvitor/boardcapture/blob/main/fluxograma_geral.xml)

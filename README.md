@@ -13,4 +13,4 @@
  - wireless LAN password: **12345678**
  
  #flow
-![diagram](https://github.com/julianvitor/boardcapture/blob/main/fluxograma_geral.jpg)
+![diagram](https://github.com/julianvitor/boardcapture/blob/main/architecture/fluxograma_geral.jpg)

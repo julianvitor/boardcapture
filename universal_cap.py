@@ -12,11 +12,16 @@ def universalCap(heigth, width, device = 0, inside_folder_path = str(os.getcwd()
         raise Exception ("_____ERROR WHILE OPENING CAMERA_____")
 
     ret,frame = camera.read()
+    
     if (ret==False):
         raise Exception ("_____ERROR WHILE READING CAMERA DATA_____")
+    
+    try:
+        if not os.path.exists("\images"):
+            os.makedirs("\images")
+    except:
+        raise Exception ("_____ERROR WHILE CREATING FOLDER_____")
 
-
-    #inside_folder_path = str(os.getcwd()) + "\images"
     try:
 
         file_name = "%s-%s-%s-%s-%s-%s.png"%(current_time.day, current_time.month, current_time.year, current_time.hour, current_time.minute, current_time.second)

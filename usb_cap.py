@@ -8,7 +8,9 @@ while True:
     current_time = datetime.datetime.now()
 
     webcam = cv2.VideoCapture(0)
-    frame = webcam.read()[0]
+    webcam.set(cv2.CAP_PROP_FRAME_HEIGHT, 3264)
+    webcam.set(cv2.CAP_PROP_FRAME_WIDTH, 1836 )
+    ret,frame = webcam.read()
     
     if (webcam.isOpened()== False): 
         print("Error opening cam")

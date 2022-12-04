@@ -19,6 +19,6 @@ while True:
 
     try:
         clsCapture(1920,1080)
-    except: raise Exception ("_____cls camera error_____")
-
+    except: 
+        print ("_____cls camera error_____")
     time.sleep(3)

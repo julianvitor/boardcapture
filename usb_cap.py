@@ -1,19 +1,15 @@
+# -*- coding: utf-8 -*-
 import cv2
-
-cap = cv2.VideoCapture(0)
-
-# Check if the webcam is opened correctly
-if not cap.isOpened():
-    raise IOError("Cannot open webcam")
+import time
+import os
 
 while True:
-    ret, frame = cap.read()
-    frame = cv2.resize(frame, None, fx=0.5, fy=0.5, interpolation=cv2.INTER_AREA)
-    cv2.imshow('Input', frame)
+    webcam = cv2.VideoCapture(0)
+    frame = webcam.read()[1]
+    folder_path = str(os.getcwd()) + "\images"
+    path = os.path.join(folder_path, "teste.png")
+    # path = os.path.join("C:\Dev\\boardcapture\\fotos", "teste.png")
+    time.sleep(1)
 
-    c = cv2.waitKey(1)
-    if c == 27:
-        break
-
-cap.release()
-cv2.destroyAllWindows()
+    cv2.imwrite(path, frame)
+    print("capiturado")

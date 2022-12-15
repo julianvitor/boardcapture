@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
-import cv2, datetime, os, glob, time
+import cv2, datetime, os, time
 from diference_opencv import different
 
+#este primeiro grande bloco captura um frame e o grava em disco e mantem na memoria
 def universalCap(width = 1920 ,heigth = 1280, device = 0,interval = 3, inside_folder = str(os.getcwd()) + "\images", fps = 60):
     print("try 1")
     try:
@@ -46,11 +47,7 @@ def universalCap(width = 1920 ,heigth = 1280, device = 0,interval = 3, inside_fo
     
     time.sleep(interval)
 
-
-
-#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^frame1^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-#vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvframe2vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+#este segundo frame é lido e armazenado na memoria para ser comparado com o primeiro frame
 
     ret2,frame2 = camera.read()
     
@@ -63,7 +60,7 @@ def universalCap(width = 1920 ,heigth = 1280, device = 0,interval = 3, inside_fo
     except:
         raise Exception ("_____ERROR WHILE CREATING FOLDER FOR UNIVERSAL_____")
     
-    if different(frame, frame2) == True:
+    if different(frame, frame2) == True: # caso a diferença entre o anterior seja maior que um valor arbitrario o segundo frame sera salvo em disco
         current_time = datetime.datetime.now()
         print("frame 2 try 4")
         try:
@@ -77,7 +74,5 @@ def universalCap(width = 1920 ,heigth = 1280, device = 0,interval = 3, inside_fo
             raise Exception ("_____ERROR WHILE SAVING IMAGE AT STORAGE_____")
 
     else:
-        print("imagens iguais, removendo %s"%(full_file_path))
-        os.remove(full_file_path)
-
-    
+        pass
+#observação verificar logica para fora de pares, comparar imagem ja gravada com proxima imagem

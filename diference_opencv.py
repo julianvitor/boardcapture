@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
+import os
 import cv2
 import numpy as np 
-def different(img1 = cv2.imread('C:\\Users\\usurio1\Downloads\\boardcapture-main\images\\test1.jpg', 0) , img2 = cv2.imread('C:\\Users\\usurio1\Downloads\\boardcapture-main\images\\test2.jpg', 0)):
-    #img1 = cv2.imread('C:\\Users\\usurio1\Downloads\\boardcapture-main\images\\14-12-2022-19-25-34.png', 0)
-    #img2 = cv2.imread('C:\\Users\\usurio1\Downloads\\boardcapture-main\images\\14-12-2022-19-29-43.png', 0)
-
+def different(img1, img2, difference_target = 10):
     #--- take the absolute difference of the images ---
+    
     absolute = cv2.absdiff(img1, img2)
 
     #--- convert the result to integer type ---
@@ -14,6 +13,11 @@ def different(img1 = cv2.imread('C:\\Users\\usurio1\Downloads\\boardcapture-main
     #--- find percentage difference based on number of pixels that are not zero ---
     percentage = (np.count_nonzero(absolute) * 100)/ absolute.size
 
-    print (percentage)
+    print ("difference between images is %s%%" %(percentage))
 
-different()
+    if percentage > difference_target:
+        return True
+    else:
+        return False
+        
+    

@@ -1,9 +1,9 @@
 #!/bin/sh
 # launcher.sh
-
-sudo apt update
-sudo timedatectl set-ntp true
-sudo apt install git
+sudo apt-get update
+sudo apt-get install git
+sudo apt-get install pip
+sudo pip install -r requirements.txt
 git clone https://github.com/julianvitor/boardcapture.git
 cd boardcapture
 git config pull.rebase true

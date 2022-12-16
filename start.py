@@ -7,7 +7,7 @@ except:
     print("_____ERROR WHILE IMPORTING universalCap_____")
 
 hour_start = 6
-hour_stop = 22
+hour_stop = 23
 while True:
     time_now= datetime.datetime.now()
     if time_now.hour > hour_start and time_now.hour < hour_stop:

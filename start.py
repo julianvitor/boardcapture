@@ -24,4 +24,4 @@ while True:
         print("\n")
     else:
         print("__________waiting for schedule__________")
-        time.sleep(60)
+        time.sleep(interval)

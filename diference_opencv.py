@@ -10,7 +10,7 @@ def different(img1, img2, difference_target = 90):
     #--- convert the result to integer type ---
     absolute = absolute.astype(np.uint8)
 
-    #--- find percentage difference based on number of pixels that are not zero ---
+    #porcentagem da diferença absoluta entre pixels não zero
     percentage = (np.count_nonzero(absolute) * 100)/ absolute.size
 
     print ("difference between images is %s%%" %(percentage))

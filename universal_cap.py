@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import cv2, datetime, os, glob, time
+import cv2, datetime, os, time
 from diference_opencv import different
 
 #esse bloco faz a configuração da camera e captura o primeiro quadro

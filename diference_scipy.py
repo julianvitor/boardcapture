@@ -42,3 +42,5 @@ def normalize(arr):
 
 if __name__ == "__main__":
     main()
+
+#retornar para o portugues o comentarios do modulo

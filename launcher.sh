@@ -2,7 +2,7 @@
 # launcher.sh
 echo 'wating for network'
 sleep 10
-sudo raspi-config nonint do_camera 0
+sudo raspi-config nonint do_camera 1
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install git

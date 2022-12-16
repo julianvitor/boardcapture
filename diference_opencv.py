@@ -2,7 +2,7 @@
 import os
 import cv2
 import numpy as np 
-def different(img1, img2, difference_target = 10):
+def different(img1, img2, difference_target = 90):
     #--- take the absolute difference of the images ---
     
     absolute = cv2.absdiff(img1, img2)

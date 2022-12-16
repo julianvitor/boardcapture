@@ -1,24 +1,27 @@
 # -*- coding: utf-8 -*-
 import time
+import datetime
 try :
     from universal_cap import universalCap
 except:
     print("_____ERROR WHILE IMPORTING universalCap_____")
-try :
-    from cls_cap import clsCapture
-except:
-    print ("_____ERROR WHILE IMPORTING clsCapture_____")
-    pass
 
+hour_start = 6
+hour_stop = 22
 while True:
-    interval = 5
-    try:
-        clsCapture(1920,1080,0)#try capture with embedded camera
-    except: 
-        print ("_____cls camera error_____")
+    time_now= datetime.datetime.now()
+    if time_now.hour > hour_start and time_now.hour < hour_stop:
+        interval = 4
+        difference_target = 76.1
+        fps = 20
+        x = 1280
+        y = 720
+        device = 0
         try: 
-            universalCap(1920,1080,0,interval) #try capture with opencv 
+            universalCap(x,y,device,interval,difference_target, fps) #try capture with opencv 
         except:
             raise Exception ("_____universal camera error_____")
-
-    time.sleep(interval)
+        print("\n")
+    else:
+        print("__________waiting for schedule__________")
+        time.sleep(60)

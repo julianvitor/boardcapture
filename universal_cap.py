@@ -2,7 +2,8 @@
 import cv2, datetime, os, glob, time
 from diference_opencv import different
 
-def universalCap(width = 1280 ,heigth = 720, device = 0,interval = 1,difference_target = 95, fps = 1, inside_folder = str(os.getcwd()) + "\images"):
+#esse bloco faz a configuração da camera e captura o primeiro quadro
+def universalCap(width = 1280 ,heigth = 720, device = 0,interval = 1,difference_target = 95, fps = 1, inside_folder = str(os.getcwd()) + "_images"):
     print("__________frame 1__________")
     try:
         camera = cv2.VideoCapture(device) #parameter for device set (0 is default)
@@ -26,8 +27,8 @@ def universalCap(width = 1280 ,heigth = 720, device = 0,interval = 1,difference_
     if (ret==False):
         raise Exception ("_____ERROR WHILE READING CAMERA DATA(check properties)_____")
     try:
-        if not os.path.exists(str(os.getcwd()) + "\images"):
-            os.makedirs(str(os.getcwd()) + "\images")
+        if not os.path.exists(str(os.getcwd()) + "_images"):
+            os.makedirs(str(os.getcwd()) + "_images")
     except:
         raise Exception ("_____ERROR WHILE CREATING FOLDER FOR UNIVERSAL_____")
     
@@ -42,15 +43,7 @@ def universalCap(width = 1280 ,heigth = 720, device = 0,interval = 1,difference_
     except:
         raise Exception ("_____ERROR WHILE SAVING IMAGE AT STORAGE_____")
     
-    
-    
-    
-
-
-
-#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^frame1^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-#vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvframe2vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+#o bloco a baixo captura o segundo quadro e utiliza o modulo difference_opencv para comaprar
     
     print("__________frame 2__________")
     ret2,frame2 = camera.read()

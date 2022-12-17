@@ -1,0 +1,28 @@
+#comandos para o crontab
+
+@reboot sh/home/pi/boardcapture/launcher.sh >/home/pi/boardcapture/logs/cronlog 2>&1
+
+0 5 * * * sudo reboot
+
+
+#parametros das imagens
+
+ssh = pi
+senha = 12345678
+
+wifi = pi
+senha = 12345678
+
+usuario = pi
+senha = 12345678
+
+#raspi config 
+teclado
+autostart
+enable camera
+update
+
+#instalar o boardcap
+sudo apt install git
+git clone https://github.com/julianvitor/boardcapture.git
+cd boardcapture & sh launcher.sh

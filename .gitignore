@@ -125,3 +125,5 @@ dmypy.json
 
 # cache images
 *.png
+
+.vscode/

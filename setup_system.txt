@@ -1,11 +1,10 @@
 #comandos para o crontab
 
 @reboot sh/home/pi/boardcapture/launcher.sh >/home/pi/boardcapture/logs/cronlog 2>&1
-
 0 5 * * * sudo reboot
 
 
-#parametros das imagens
+#parametros do sistema
 
 ssh = pi
 senha = 12345678
@@ -17,6 +16,7 @@ usuario = pi
 senha = 12345678
 
 #raspi config 
+
 teclado
 autostart
 enable camera

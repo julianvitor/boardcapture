@@ -16,3 +16,8 @@
  
  #flow
 ![diagram](https://github.com/julianvitor/boardcapture/blob/main/architecture/fluxograma_geral.jpg)
+
+# img downloads
+- with graphical interface **https://mega.nz/file/z3oACZQS#7qQEzGyXZfyBeOjMwuaRwNbrxV4NeDCCJ9A6cex4muk**
+
+- without graphical interface **https://mega.nz/file/L6pg2AgI#Ptsvk1jarBWqYsBlVl_o88sbbpi3mTAB7dB1mUxucwY**
